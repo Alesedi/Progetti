@@ -1,0 +1,274 @@
+/* Sfondo dinamico con gradiente */
+body {
+  background: linear-gradient(135deg, #990092, #ea00ff);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  /* Centra il contenuto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Imposta l'altezza minima a 100% della viewport */
+}
+
+
+/* Animazione del gradiente */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Stile della lista di film */
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center; /* Centra le card */
+  background-color: transparent;
+}
+
+.movie-list h2{
+  max-width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Stile della singola card */
+.movie-item {
+  display: flex;
+  flex-direction: row;
+  min-width: 200px;
+  max-width: 400px;
+  text-align: center;
+  border: 2px solid #fff;
+  border-radius: 12px; /* Arrotondamento più morbido */
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.8); /* Sfondo semi-trasparente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.movie-left p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie-right {
+  align-content: center;
+  padding: 12px;
+  width: 50%;
+  text-align: -webkit-left;
+  color: orangered;
+  font-family: cursive;
+}
+
+/* Riduci l'effetto al passaggio del mouse */
+.movie-item:hover {
+  transform: scale(1.02); /* Effetto di ingrandimento */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombra marcata */
+}
+
+img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.1s ease; 
+}
+
+.movie-item:hover img {
+  transform: scale(1.03); /* Effetto zoom passaggio mouse*/
+}
+
+/* Contenitore della modalità di scorrimento */
+.movie-container {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.3); /* Sfondo semi-trasparente */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Stile dei pulsanti */
+button {
+  margin: 0 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #FF5722; 
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background-color: #FF784E; /* Colore leggermente più chiaro al passaggio del mouse */
+  transform: translateY(-2px); /* Leggera spinta verso l'alto */
+}
+
+button:disabled {
+  background-color: lightgray;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.toggle-button-container {
+  display: flex; /* Usa flexbox per l'allineamento */
+  justify-content: center; /* Centra orizzontalmente */
+  margin: 20px 0; /* Spaziatura verticale */
+}
+
+button.toggle-view {
+  margin: 0;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #FF5722;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button.toggle-view:hover {
+  background-color: #FF784E;
+  transform: translateY(-2px);
+}
+
+
+/* Pulsanti di navigazione */
+.navigation-buttons {
+  margin-top: 15px;
+}
+
+/* Titolo della pagina */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+h2{
+  color:rgb(118, 118, 118)
+}
+
+/* Testo di errore */
+p {
+  font-size: 1.2rem;
+  color: red;
+  text-align: center;
+}
+
+/* Effetto di transizione al cambio modalità */
+.movie-list, .movie-container {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/*LOGIN */
+
+.login-container {
+  background-color: rgba(255, 255, 255, 0.2); /* Sfondo semi-trasparente */
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 1s forwards;
+  padding-left: 15px;
+}
+
+/* Stile del form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Stile per l'intestazione */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Stile degli input */
+.input-group {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  color: #333;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+/*GENERI*/
+
+.genres-container {
+  margin: 20px;
+}
+
+.genre-section {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.movie-row {
+  display: flex;
+  overflow-x: auto;  /* Abilita lo scorrimento orizzontale */
+  padding: 20px 20px;
+  gap: 13px;
+  justify-content: center;
+}
+
+.movie-row::-webkit-scrollbar {
+  height: 8px; /* Altezza della scrollbar */
+}
+
+.movie-row::-webkit-scrollbar-thumb {
+  background: #888; /* Colore della scrollbar */
+  border-radius: 10px; /* Bordo arrotondato della scrollbar */
+}
+
+.movie-row::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Colore della scrollbar al passaggio del mouse */
+}
+
+.movie-item.compact {
+  width: 100px; /* Dimensione della card in modalità compatta */
+  padding: 5px; /* Spaziatura ridotta per la modalità compatta */
+  align-items: center;
+  justify-content: center;
+}
