@@ -20,7 +20,10 @@ def register_routes(app):
             return jsonify({'error': 'Test ID is required'}), 400
 
         # Trova il test corrispondente nel file di configurazione
-        selected_test = next((test for test in TESTS if test['id'] == test_id), None)
+        selected_test=None
+        for test in TESTS:
+            if test['id'] == test_id:
+                selected_test=test
 
         # Verifica se il test esiste
         if not selected_test:
