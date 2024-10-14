@@ -15,6 +15,6 @@ def generate_recommendations(sorted_items):
             'poster_path': movie_data.get('poster_path'),
             'backdrop_path': movie_data.get('backdrop_path'),
             'overview': movie_data.get('overview'),
-            'rating': row['rating']
+            'rating': row['avg_rating']
         })
     return recommendations
